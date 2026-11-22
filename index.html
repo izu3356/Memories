@@ -1,137 +1,180 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forever - Eternity</title>
+<title>For You ♡</title>
 
 <style>
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: #f5f0e8;
-  color: #51483f;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe0eb, #fff0f5, #ffc5d8);
   font-family: Georgia, serif;
-}
-
-header {
+  color: #a83255;
   text-align: center;
-  padding: 100px 20px 75px;
+  overflow-x: hidden;
 }
 
-.small {
-  font-size: 11px;
-  letter-spacing: 5px;
-  color: #a39482;
+.container {
+  padding: 60px 20px;
+}
+
+.rose {
+  font-size: 65px;
+  animation: float 3s infinite ease-in-out;
 }
 
 h1 {
-  font-size: 38px;
-  font-weight: normal;
-  margin: 30px 0 15px;
-}
-
-.subtitle {
-  font-size: 15px;
-  color: #998b7c;
-  font-style: italic;
-}
-
-main {
-  max-width: 620px;
-  margin: auto;
-  padding: 20px;
-}
-
-section {
-  border-top: 1px solid #d9cfc1;
-  padding: 35px 0;
-  text-align: center;
-}
-
-h2 {
-  font-size: 22px;
-  font-weight: normal;
+  margin: 20px 0;
+  font-size: 35px;
 }
 
 p {
-  font-size: 15px;
+  line-height: 1.8;
+}
+
+.letter {
+  background: #ffffffc9;
+  max-width: 380px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px #e99ab4;
+}
+
+button {
+  border: none;
+  background: #d94f78;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 15px 5px;
+}
+
+#message {
+  display: none;
+  margin-top: 20px;
   line-height: 2;
-  color: #817569;
+}
+
+.links {
+  margin-top: 30px;
+}
+
+.links a {
+  display: inline-block;
+  color: #bd4168;
+  margin: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid;
 }
 
 .heart {
-  font-size: 35px;
-  margin: 25px;
+  position: fixed;
+  bottom: -30px;
+  animation: rise 6s linear forwards;
+  pointer-events: none;
 }
 
-footer {
-  text-align: center;
-  padding: 65px 15px;
-  color: #998b7c;
-  font-size: 13px;
-  font-style: italic;
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<header>
-  <div class="small">A PLACE FOR MEMORIES</div>
+  <div class="rose">🌹</div>
 
-  <h1>Forever & Eternity</h1>
+  <h1>For Someone Special ♡</h1>
 
-  <div class="subtitle">
-    Mãi mãi - Vĩnh cửu
+  <p>
+    In a world full of flowers,<br>
+    you're the only one I choose.
+  </p>
+
+  <div class="letter">
+    <h2>♡ A Little Letter ♡</h2>
+    <p>I've prepared something for you...</p>
+
+    <button onclick="openLetter()">
+      Open my letter 💌
+    </button>
+
+    <div id="message">
+      You are the most beautiful flower<br>
+      in my little world. 🌹<br><br>
+      Among all the flowers in this world,<br>
+      you are the only one I want.<br><br>
+      Forever and always. ♡
+    </div>
   </div>
 
-  <div class="heart">♡</div>
+  <div class="links">
+    <h3>Our Little World ♡</h3>
+    <a href="#">Our memories</a>
+    <a href="#">My favorite person</a>
+    <a href="#">Our story</a>
+  </div>
 
-  <p>
-    Some memories never fade.<br>
-    Some feelings last forever.
+  <button onclick="toggleMusic()">♫ Music</button>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <p style="margin-top:30px;font-size:13px;">
+    Made with love ♡
   </p>
-</header>
 
-<main>
+</div>
 
-<section>
-  <h2>One Heart, One Love</h2>
-  <p>
-    A little place for memories,
-    feelings and moments that last forever.
-  </p>
-</section>
+<script>
+function openLetter() {
+  document.getElementById("message").style.display = "block";
+}
 
-<section>
-  <h2>Until Love Finds Me</h2>
-  <p>
-    Maybe someday, somewhere,
-    beautiful things will find their way to us.
-  </p>
-</section>
+function toggleMusic() {
+  const music = document.getElementById("music");
 
-<section>
-  <h2>Forever</h2>
-  <div class="heart">♡</div>
-  <p>
-    Not just for a moment.<br>
-    Not just for a lifetime.<br>
-    But for eternity.
-  </p>
-</section>
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
 
-</main>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "♥";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px";
 
-<footer>
-  In aeternum ♡<br>
-  Forever and Always
-</footer>
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
 
 </body>
 </html>
+
+HTML
