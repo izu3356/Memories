@@ -135,35 +135,23 @@ footer {
 
     <p class="message">
         Some things are too beautiful to be forgotten.<br>
-        Some memories deserve to live forever.<br><br>
-        Welcome to my little archive of memories,<br>
-        words, music and everything in between.
+        Some memories are meant to last forever.
     </p>
 
     <div class="links">
 
-        <a href="memories.html">
-            ♡ Our Memories
-        </a>
+        <a href="memories.html">♡ Our Memories</a>
 
-        <a href="playlist.html">
-            ♡ Our Playlist
-        </a>
+        <a href="playlist.html">♡ Our Playlist</a>
 
-        <a href="letters.html">
-            ♡ Letters
-        </a>
+        <a href="letters.html">♡ Letters</a>
 
-        <a href="archive.html">
-            ♡ Our Archive
-        </a>
+        <a href="archive.html">♡ Our Archive</a>
 
     </div>
 
     <footer>
-        MADE WITH LOVE · FOREVER & ETERNITY
-        <br><br>
-        🌹
+        FOREVER & ETERNITY · 🌹
     </footer>
 
 </section>
@@ -173,20 +161,20 @@ function createPetal() {
     const petal = document.createElement("div");
 
     petal.className = "petal";
-    petal.innerHTML = "🌹";
+    petal.innerHTML = "🌸";
 
     petal.style.left = Math.random() * 100 + "vw";
-    petal.style.fontSize = (10 + Math.random() * 13) + "px";
-    petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+    petal.style.fontSize = (12 + Math.random() * 12) + "px";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
 
     document.body.appendChild(petal);
 
     setTimeout(() => {
         petal.remove();
-    }, 12000);
+    }, 10000);
 }
 
-setInterval(createPetal, 1300);
+setInterval(createPetal, 500);
 </script>
 
 </body>
