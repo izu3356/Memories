@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Our Memories – Forever & Eternity 🌹</title>
+<title>Our Memories ♡</title>
 
 <style>
 * {
@@ -15,101 +14,99 @@
 }
 
 body {
-    background: #fff3f2;
-    color: #762d3b;
     font-family: Georgia, serif;
-    min-height: 100vh;
-    padding: 35px 18px;
+    background: #fff4f4;
+    color: #6d202c;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 750px;
-    margin: auto;
-    text-align: center;
+.hero {
+    min-height: 100vh;
+    padding: 55px 20px 40px;
+    background:
+        linear-gradient(rgba(255,244,244,.82), rgba(255,235,238,.92)),
+        url("https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=1200");
+    background-size: cover;
+    background-position: center;
 }
 
 .rose {
     font-size: 45px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 h1 {
     font-size: 34px;
     letter-spacing: 3px;
-    color: #922f43;
+    color: #8f2638;
+    margin-bottom: 12px;
 }
 
 .subtitle {
-    margin-top: 12px;
     font-size: 14px;
     font-style: italic;
-    color: #ae737c;
+    color: #a45b67;
 }
 
 .line {
-    width: 65px;
+    width: 75px;
     height: 1px;
-    background: #c58b91;
+    background: #bd7882;
     margin: 25px auto;
 }
 
 .intro {
-    font-size: 14px;
+    max-width: 420px;
+    margin: 0 auto 30px;
+    font-size: 15px;
     line-height: 1.9;
-    color: #80515a;
-    margin-bottom: 35px;
+    color: #78434b;
 }
 
-/* Memory cards */
 .memories {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     gap: 18px;
 }
 
 .memory {
-    background: #fffafa;
-    border: 1px solid #edc9cb;
-    padding: 12px;
+    padding: 22px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid #e9b9c0;
+    border-radius: 3px;
     cursor: pointer;
     transition: .3s;
 }
 
 .memory:hover {
-    transform: translateY(-5px);
-    background: #fce7e8;
-}
-
-.memory img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 13px;
+    background: #fce5e9;
+    transform: translateY(-3px);
 }
 
 .memory h2 {
-    font-size: 16px;
+    font-size: 19px;
     font-weight: normal;
-    margin-bottom: 7px;
+    color: #8f2638;
+    margin-bottom: 8px;
 }
 
 .memory p {
-    font-size: 12px;
-    color: #b17b82;
+    font-size: 13px;
+    color: #a45b67;
     font-style: italic;
 }
 
-/* Memory details */
 .detail {
     display: none;
-    background: #fffafa;
-    border: 1px solid #edc9cb;
-    padding: 22px;
     margin-top: 15px;
-    line-height: 1.9;
+    padding-top: 15px;
+    border-top: 1px solid #e9b9c0;
     font-size: 14px;
-    text-align: left;
+    line-height: 1.9;
+    color: #78434b;
 }
 
 .detail.show {
@@ -119,32 +116,39 @@ h1 {
 .back {
     display: inline-block;
     margin-top: 35px;
-    padding: 12px 25px;
-    color: #922f43;
+    padding: 13px 25px;
+    color: #8f2638;
     text-decoration: none;
-    border: 1px solid #d9a5ac;
+    background: rgba(255,255,255,.8);
+    border: 1px solid #e9b9c0;
     transition: .3s;
 }
 
 .back:hover {
-    background: #922f43;
+    background: #a83b4d;
     color: white;
 }
 
 footer {
     margin-top: 45px;
     font-size: 12px;
-    color: #b17b82;
+    color: #a9787e;
     letter-spacing: 1px;
 }
 
-@media (max-width: 480px) {
-    .memories {
-        grid-template-columns: 1fr;
-    }
+/* Falling petals */
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
 
-    .memory img {
-        height: 220px;
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
     }
 }
 </style>
@@ -152,88 +156,61 @@ footer {
 
 <body>
 
-<div class="container">
+<section class="hero">
 
     <div class="rose">🌹</div>
 
     <h1>Our Memories</h1>
 
     <p class="subtitle">
-        Little moments, endless memories
+        Every little moment lives forever.
     </p>
 
     <div class="line"></div>
 
     <p class="intro">
-        Every picture holds a story.<br>
-        Every memory deserves to be remembered.<br>
-        Welcome to our little collection of moments.
+        Some memories are written in the heart,
+        never to be forgotten.
     </p>
 
-    <!-- MEMORY PHOTOS -->
     <div class="memories">
 
         <div class="memory" onclick="openMemory(1)">
-            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
-                 alt="Beautiful morning">
-            <h2>♡ A beautiful day</h2>
-            <p>Somewhere in time</p>
+            <h2>♡ The First Moment</h2>
+            <p>Click to open our memory</p>
+            <div id="detail1" class="detail">
+                The beginning of a beautiful story.
+                A moment I will always remember. 🌷
+            </div>
         </div>
 
         <div class="memory" onclick="openMemory(2)">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"
-                 alt="Flowers">
-            <h2>♡ Little things</h2>
-            <p>Things worth remembering</p>
+            <h2>♡ Little Happiness</h2>
+            <p>Click to open our memory</p>
+            <div id="detail2" class="detail">
+                Even the smallest moments become
+                precious when they are with you. ♡
+            </div>
         </div>
 
         <div class="memory" onclick="openMemory(3)">
-            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600"
-                 alt="Starry night">
-            <h2>♡ Under the stars</h2>
-            <p>A moment to keep</p>
+            <h2>♡ Our Special Days</h2>
+            <p>Click to open our memory</p>
+            <div id="detail3" class="detail">
+                Days may pass, but the memories
+                will always stay in my heart. 🌹
+            </div>
         </div>
 
         <div class="memory" onclick="openMemory(4)">
-            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600"
-                 alt="Ocean">
-            <h2>♡ Somewhere by the sea</h2>
-            <p>Memories never fade</p>
+            <h2>♡ Somewhere by the Sea</h2>
+            <p>Click to open our memory</p>
+            <div id="detail4" class="detail">
+                The ocean keeps its secrets,
+                and the heart keeps its memories.
+            </div>
         </div>
 
-    </div>
-
-    <!-- MEMORY CONTENTS -->
-    <div id="detail1" class="detail">
-        <h2>♡ A beautiful day</h2>
-        <p>
-            Some days are ordinary, but somehow
-            they become unforgettable memories.
-        </p>
-    </div>
-
-    <div id="detail2" class="detail">
-        <h2>♡ Little things</h2>
-        <p>
-            Sometimes the smallest things
-            leave the biggest memories.
-        </p>
-    </div>
-
-    <div id="detail3" class="detail">
-        <h2>♡ Under the stars</h2>
-        <p>
-            Even the quietest nights
-            can hold the most beautiful thoughts.
-        </p>
-    </div>
-
-    <div id="detail4" class="detail">
-        <h2>♡ Somewhere by the sea</h2>
-        <p>
-            The ocean keeps its secrets,
-            and the heart keeps its memories.
-        </p>
     </div>
 
     <a class="back" href="index.html">
@@ -244,16 +221,30 @@ footer {
         FOREVER & ETERNITY · 🌹
     </footer>
 
-</div>
+</section>
 
 <script>
 function openMemory(number) {
     const selected = document.getElementById("detail" + number);
-
-    if (selected) {
-        selected.classList.toggle("show");
-    }
+    selected.classList.toggle("show");
 }
+
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = "🌸";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (12 + Math.random() * 12) + "px";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+setInterval(createPetal, 500);
 </script>
 
 </body>
