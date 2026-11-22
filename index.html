@@ -1,245 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ♡</title>
+<title>Forever – Eternity ❤️🌹</title>
 
 <style>
-
-.letter-links {
-
-max-width: 380px;
-
-margin: 25px auto;
-
-padding: 25px;
-
-background: #fff8fa;
-
-border: 1px solid #edc5d3;
-
-border-radius: 15px;
-
-text-align: center;
-
-}
-
-.letter-links h2 {
-
-color: #bd718b;
-
-margin-bottom: 20px;
-
-}
-
-.letter-links a {
-
-display: block;
-
-padding: 13px;
-
-margin: 10px 0;
-
-color: #a65d78;
-
-background: #ffeaf1;
-
-border-radius: 10px;
-
-text-decoration: none;
-
-}
-
-.letter-links a:hover {
-
-background: #f5cfdd;
-
-}
-
-</style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ffe0eb, #fff0f5, #ffc5d8);
-  font-family: Georgia, serif;
-  color: #a83255;
-  text-align: center;
-  overflow-x: hidden;
+    font-family: Georgia, serif;
+    background: #fff4f4;
+    color: #6d202c;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-.container {
-  padding: 60px 20px;
+/* Background */
+.hero {
+    min-height: 100vh;
+    padding: 65px 20px 40px;
+    background:
+        linear-gradient(rgba(255,244,244,.78), rgba(255,235,238,.9)),
+        url("https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=1200");
+    background-size: cover;
+    background-position: center;
 }
 
+/* Rose */
 .rose {
-  font-size: 65px;
-  animation: float 3s infinite ease-in-out;
+    font-size: 48px;
+    margin-bottom: 18px;
 }
 
 h1 {
-  margin: 20px 0;
-  font-size: 35px;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: #8f2638;
+    margin-bottom: 12px;
 }
 
-p {
-  line-height: 1.8;
+.subtitle {
+    font-size: 15px;
+    font-style: italic;
+    color: #a45b67;
+    margin-bottom: 35px;
 }
 
-.letter {
-  background: #ffffffc9;
-  max-width: 380px;
-  margin: 30px auto;
-  padding: 30px 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px #e99ab4;
+.line {
+    width: 75px;
+    height: 1px;
+    background: #bd7882;
+    margin: 25px auto;
 }
 
-button {
-  border: none;
-  background: #d94f78;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  cursor: pointer;
-  margin: 15px 5px;
+.message {
+    max-width: 450px;
+    margin: 0 auto 35px;
+    line-height: 1.9;
+    font-size: 15px;
+    color: #78434b;
 }
 
-#message {
-  display: none;
-  margin-top: 20px;
-  line-height: 2;
-}
-
+/* Navigation */
 .links {
-  margin-top: 30px;
+    max-width: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .links a {
-  display: inline-block;
-  color: #bd4168;
-  margin: 10px;
-  text-decoration: none;
-  border-bottom: 1px solid;
+    display: block;
+    padding: 17px;
+    text-decoration: none;
+    color: #8f2638;
+    background: rgba(255,255,255,.75);
+    border: 1px solid #e9b9c0;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.heart {
-  position: fixed;
-  bottom: -30px;
-  animation: rise 6s linear forwards;
-  pointer-events: none;
+.links a:hover {
+    background: #a83b4d;
+    color: white;
+    transform: translateY(-3px);
 }
 
-@keyframes rise {
-  to {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
+footer {
+    margin-top: 55px;
+    font-size: 12px;
+    color: #a9787e;
+    letter-spacing: 1px;
 }
 
-@keyframes float {
-  50% { transform: translateY(-12px); }
+/* Falling petals */
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-  <div class="rose">🌹❤️</div>
+<section class="hero">
 
-  <h1>For Someone Special ♡</h1>
+    <div class="rose">🌹</div>
 
-  <p>
-    In a world full of flowers,<br>
-    you're the only one I choose.
-  </p>
+    <h1>Forever – Eternity</h1>
 
-  <div class="letter">
-    <h2>♡ A Little Letter ♡</h2>
-    <p>I've prepared something for you...</p>
+    <p class="subtitle">
+        A rose for eternity
+    </p>
 
-    <button onclick="openLetter()">
-      Open my letter 💌
-    </button>
+    <div class="line"></div>
 
-    <div id="message">
-      You are the most beautiful flower<br>
-      in my little world. 🌹<br><br>
-      Among all the flowers in this world,<br>
-      you are the only one I want.<br><br>
-      Forever and always. ♡
+    <p class="message">
+        Some things are too beautiful to be forgotten.<br>
+        Some memories deserve to live forever.<br><br>
+        Welcome to my little archive of memories,<br>
+        words, music and everything in between.
+    </p>
+
+    <div class="links">
+
+        <a href="memories.html">
+            ♡ Our Memories
+        </a>
+
+        <a href="playlist.html">
+            ♡ Our Playlist
+        </a>
+
+        <a href="letters.html">
+            ♡ Letters
+        </a>
+
+        <a href="archive.html">
+            ♡ Our Archive
+        </a>
+
     </div>
-  </div>
 
-  <div class="links">
-    <h3>Our Little World ♡</h3>
-    <a href="#">Our memories</a>
-    <a href="#">My favorite person</a>
-    <a href="#">Our story</a>
-  </div>
-   
-<div class="letter-links">
-  <h2>♡ Our Little Universe ♡</h2>
+    <footer>
+        MADE WITH LOVE · FOREVER & ETERNITY
+        <br><br>
+        🌹
+    </footer>
 
-  <a href="message.html">01. A Little Message ♡</a>
-
-  <a href="memories.html">02. Our Memories 🌷</a>
-
-  <a href="playlist.html">03. Songs for You 🎧</a>
-
-  <a href="letters.html">04. Another Letter 💌</a>
-
-  <a href="archive.html">05. Our Archive 🕊️</a>
-</div>
-  <button onclick="toggleMusic()">♫ Music</button>
-
-  <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <p style="margin-top:30px;font-size:13px;">
-    Made with love ♡
-  </p>
-
-</div>
+</section>
 
 <script>
-function openLetter() {
-  document.getElementById("message").style.display = "block";
+function createPetal() {
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+    petal.innerHTML = "🌹";
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (10 + Math.random() * 13) + "px";
+    petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 12000);
 }
 
-function toggleMusic() {
-  const music = document.getElementById("music");
-
-  if (music.paused) {
-    music.play();
-  } else {
-    music.pause();
-  }
-}
-
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "♥";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (12 + Math.random() * 20) + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 6000);
-}
-
-setInterval(createHeart, 500);
+setInterval(createPetal, 1300);
 </script>
 
 </body>
 </html>
-
-HTML
