@@ -1,0 +1,27 @@
+class="detail">
+    <h2>♡ Somewhere by the sea</h2>
+    <p>
+        The ocean keeps its secrets,
+        and the heart keeps its memories.
+    </p>
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<footer>
+    FOREVER & ETERNITY · 🌹
+</footer>
+
+</div>
+
+<script>
+function openMemory(number) {
+    const selected = document.getElementById("detail" + number);
+    selected.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+
+HTML
