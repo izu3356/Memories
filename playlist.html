@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Playlist ♡</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #fff5f8;
+  color: #9b6179;
+}
+
+.playlist-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px;
+}
+
+.playlist-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 22px;
+  text-align: center;
+  background: linear-gradient(145deg, #fff0f5, #f9dce8);
+  border: 1px solid #f2c5d6;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(180, 100, 130, 0.15);
+}
+
+.music-symbol {
+  font-size: 45px;
+  color: #d58ba7;
+  margin-bottom: 10px;
+}
+
+.playlist-card h1 {
+  font-size: 32px;
+  margin: 8px 0;
+  color: #a65d7b;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.spotify-player {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.spotify-player iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.footer {
+  margin-top: 22px;
+  font-size: 13px;
+  font-style: italic;
+  color: #ad7890;
+}
+</style>
+</head>
+
+<body>
+
+<section class="playlist-section">
+  <div class="playlist-card">
+
+    <div class="music-symbol">♫</div>
+
+    <h1>Our Playlist ♡</h1>
+
+    <p class="subtitle">
+      Every song tells a story.<br>
+      Every melody keeps a memory.
+    </p>
+
+    <div class="spotify-player">
+      <iframe
+        src="https://open.spotify.com/embed/playlist/3GVS1bxF1q4EczZEgqrY4a?utm_source=generator"
+        height="380"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="footer">
+      A little music, a lot of memories ♡
+    </p>
+
+  </div>
+</section>
+
+</body>
+</html>
