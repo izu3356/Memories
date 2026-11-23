@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,213 +8,119 @@
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Georgia, serif;
-    background: #fff4f4;
-    color: #6d202c;
+    margin: 0;
+    padding: 20px;
     text-align: center;
-    overflow-x: hidden;
-}
-
-.hero {
-    min-height: 100vh;
-    padding: 55px 20px 40px;
-    background:
-        linear-gradient(rgba(255,244,244,.82), rgba(255,235,238,.92)),
-        url("https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=1200");
-    background-size: cover;
-    background-position: center;
-}
-
-.rose {
-    font-size: 45px;
-    margin-bottom: 15px;
+    font-family: Georgia, serif;
+    color: #84394f;
+    background: linear-gradient(135deg, #ffe5eb, #f8d4df);
 }
 
 h1 {
-    font-size: 34px;
-    letter-spacing: 3px;
-    color: #8f2638;
-    margin-bottom: 12px;
+    font-size: 36px;
+    margin-top: 35px;
 }
 
 .subtitle {
-    font-size: 14px;
     font-style: italic;
-    color: #a45b67;
+    margin-bottom: 30px;
 }
 
-.line {
-    width: 75px;
-    height: 1px;
-    background: #bd7882;
-    margin: 25px auto;
-}
-
-.intro {
-    max-width: 420px;
-    margin: 0 auto 30px;
-    font-size: 15px;
-    line-height: 1.9;
-    color: #78434b;
-}
-
-.memories {
-    max-width: 450px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
 }
 
 .memory {
-    padding: 22px;
-    background: rgba(255,255,255,.8);
-    border: 1px solid #e9b9c0;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: .3s;
+    background: rgba(255,255,255,0.85);
+    padding: 9px;
+    border-radius: 12px;
+    border: 1px solid #e8b9c5;
 }
 
-.memory:hover {
-    background: #fce5e9;
-    transform: translateY(-3px);
-}
-
-.memory h2 {
-    font-size: 19px;
-    font-weight: normal;
-    color: #8f2638;
-    margin-bottom: 8px;
+.memory img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 9px;
 }
 
 .memory p {
-    font-size: 13px;
-    color: #a45b67;
-    font-style: italic;
-}
-
-.detail {
-    display: none;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #e9b9c0;
-    font-size: 14px;
-    line-height: 1.9;
-    color: #78434b;
-}
-
-.detail.show {
-    display: block;
+    font-size: 15px;
+    margin: 10px 0;
 }
 
 .back {
     display: inline-block;
-    margin-top: 35px;
-    padding: 13px 25px;
-    color: #8f2638;
+    margin: 35px 0;
+    padding: 14px 30px;
+    background: white;
+    color: #84394f;
     text-decoration: none;
-    background: rgba(255,255,255,.8);
-    border: 1px solid #e9b9c0;
-    transition: .3s;
-}
-
-.back:hover {
-    background: #a83b4d;
-    color: white;
-}
-
-footer {
-    margin-top: 45px;
-    font-size: 12px;
-    color: #a9787e;
-    letter-spacing: 1px;
-}
-
-/* Falling petals */
-.petal {
-    position: fixed;
-    top: -30px;
-    z-index: 10;
-    pointer-events: none;
-    animation: fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+    border-radius: 8px;
+    border: 1px solid #e8b9c5;
+    font-size: 18px;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<h1>♡ Our Memories ♡</h1>
+<p class="subtitle">Every picture tells a story.</p>
 
-    <div class="rose">🌹</div>
+<div class="gallery">
 
-    <h1>Our Memories</h1>
-
-    <p class="subtitle">
-        Every little moment lives forever.
-    </p>
-
-    <div class="line"></div>
-
-    <p class="intro">
-        Some memories are written in the heart,
-        never to be forgotten.
-    </p>
-
-    <div class="memories">
-
-        <div class="memory" onclick="openMemory(1)">
-            <img src="https://i.imgur.com/abc123.jpg" alt="Our Memory">
-            </div>
-        </div>
-
+    <div class="memory">
+        <img src="images/photo1.jpg" alt="Memory 1">
+        <p>The First Moment ♡</p>
     </div>
 
-    <a class="back" href="index.html">
-        ← Back to Home
-    </a>
+    <div class="memory">
+        <img src="images/photo2.jpg" alt="Memory 2">
+        <p>Little Happiness ♡</p>
+    </div>
 
-    <footer>
-        FOREVER & ETERNITY · 🌹
-    </footer>
+    <div class="memory">
+        <img src="images/photo3.jpg" alt="Memory 3">
+        <p>Beautiful Days ♡</p>
+    </div>
 
-</section>
+    <div class="memory">
+        <img src="images/photo4.jpg" alt="Memory 4">
+        <p>Special Moments ♡</p>
+    </div>
 
-<script>
-function openMemory(number) {
-    const selected = document.getElementById("detail" + number);
-    selected.classList.toggle("show");
-}
+    <div class="memory">
+        <img src="images/photo5.jpg" alt="Memory 5">
+        <p>Sweet Memories ♡</p>
+    </div>
 
-function createPetal() {
-    const petal = document.createElement("div");
-    petal.className = "petal";
-    petal.innerHTML = "🌸";
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.fontSize = (12 + Math.random() * 12) + "px";
-    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    <div class="memory">
+        <img src="images/photo6.jpg" alt="Memory 6">
+        <p>Forever Together ♡</p>
+    </div>
 
-    document.body.appendChild(petal);
+    <div class="memory">
+        <img src="images/photo7.jpg" alt="Memory 7">
+        <p>Lovely Moments ♡</p>
+    </div>
 
-    setTimeout(() => {
-        petal.remove();
-    }, 10000);
-}
+    <div class="memory">
+        <img src="images/photo8.jpg" alt="Memory 8">
+        <p>Never Forgotten ♡</p>
+    </div>
 
-setInterval(createPetal, 500);
-</script>
+</div>
+
+<a href="index.html" class="back">← Back to Home</a>
 
 </body>
 </html>
