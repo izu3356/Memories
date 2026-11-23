@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,6 +65,15 @@ body {
   display: block;
   width: 100%;
   border: none;
+  border-radius: 16px;
+}
+
+.playlist-item {
+  margin-bottom: 22px;
+}
+
+.playlist-item:last-child {
+  margin-bottom: 0;
 }
 
 .footer {
@@ -73,7 +83,6 @@ body {
   color: #ad7890;
 }
 
-/* Back to Home */
 .back-home {
   display: inline-block;
   margin-top: 22px;
@@ -91,41 +100,55 @@ body {
   background: #d889a7;
   transform: translateY(-3px);
 }
+
 </style>
 </head>
 
 <body>
 
 <section class="playlist-section">
-  <div class="playlist-card">
+<div class="playlist-card">
 
-    <div class="music-symbol">♫</div>
+<div class="music-symbol">♫</div>
 
-    <h1>Our Playlist ♡</h1>
+<h1>Our Playlist ♡</h1>
 
-    <p class="subtitle">
-      Every song tells a story.<br>
-      Every melody keeps a memory.
-    </p>
+<p class="subtitle">
+Every song tells a story.<br>
+Every melody keeps a memory.
+</p>
 
-    <div class="spotify-player">
-      <iframe
-        src="https://open.spotify.com/embed/playlist/3GVS1bxF1q4EczZEgqrY4a?utm_source=generator"
-        height="380"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </div>
+<div class="spotify-player">
 
-    <p class="footer">
-      A little music, a lot of memories ♡
-    </p>
-
-    <a href="index.html" class="back-home">
-      ♡ Back to Home
-    </a>
-
+  <div class="playlist-item">
+    <iframe
+      src="https://open.spotify.com/embed/playlist/3GVS1bxF1q4EczZEgqrY4a"
+      height="380"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
   </div>
+
+  <div class="playlist-item">
+    <iframe
+      src="https://open.spotify.com/embed/playlist/1Xa6RyqWPH5vHorHBD8mvr"
+      height="380"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</div>
+
+<a href="index.html" class="back-home">
+♡ Back to Home
+</a>
+
+<p class="footer">
+A little music, a lot of memories ♡
+</p>
+
+</div>
 </section>
 
 </body>
