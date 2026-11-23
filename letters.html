@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letters - Forever & Eternity</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px 18px;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    text-align: center;
+    color: #84394f;
+    background: linear-gradient(135deg, #ffe5eb, #f8d4df, #fff0f3);
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 38px;
+    margin-top: 35px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+.envelope {
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 35px 20px;
+    background: rgba(255,255,255,0.85);
+    border: 2px solid #e8b9c5;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(130,50,75,0.12);
+    cursor: pointer;
+}
+
+.envelope-icon {
+    font-size: 75px;
+}
+
+.envelope h2 {
+    font-size: 25px;
+}
+
+.open-text {
+    font-style: italic;
+    color: #a66b7c;
+}
+
+.letter {
+    display: none;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 30px 22px;
+    background: #fffaf9;
+    border: 1px solid #e8b9c5;
+    border-radius: 12px;
+    line-height: 1.9;
+    text-align: left;
+    box-shadow: 0 5px 18px rgba(130,50,75,0.12);
+    animation: appear 1s ease;
+}
+
+.letter h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.letter p {
+    font-size: 17px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.chocolate-section {
+    margin: 35px auto;
+    max-width: 450px;
+}
+
+.chocolate-section h2 {
+    font-size: 24px;
+}
+
+.chocolate-section img {
+    width: 85%;
+    max-width: 300px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.chocolate-section img:hover {
+    transform: scale(1.04);
+}
+
+.chocolate-text {
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.back {
+    display: inline-block;
+    margin: 35px auto;
+    padding: 14px 30px;
+    background: white;
+    color: #84394f;
+    border: 1px solid #e8b9c5;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: float 7s linear forwards;
+    z-index: 10;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>♡ Letters ♡</h1>
+
+<p class="subtitle">
+A little message from the heart.
+</p>
+
+<div class="envelope" onclick="openLetter()">
+    <div class="envelope-icon">💌</div>
+    <h2>A Letter for You</h2>
+    <p class="open-text">Click to open your letter ♡</p>
+</div>
+
+<div class="letter" id="letter">
+
+    <h2>Dear You, ♡</h2>
+
+    <p>
+        Sometimes, words are not enough
+        to express how special a person can be.
+    </p>
+
+    <p>
+        Every little moment, every smile,
+        and every memory has its own place
+        in my heart.
+    </p>
+
+    <p>
+        I hope this little letter reminds you
+        that beautiful things deserve
+        to be remembered forever.
+    </p>
+
+    <p>
+        No matter how much time passes,
+        some memories will always remain
+        precious.
+    </p>
+
+    <p class="signature">
+        With love, forever. ♡
+    </p>
+
+</div>
+
+<div class="chocolate-section">
+
+    <h2>A Little Surprise 🍫</h2>
+
+    <p class="chocolate-text">
+        A little chocolate, a little love,
+        and a memory forever.
+    </p>
+
+    <a href="PASTE_HEART_SURPRISE_URL_HERE"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <img src="chocolate.jpg"
+             alt="A Sweet Chocolate Surprise">
+
+    </a>
+
+    <p class="chocolate-text">
+        Click the chocolate to open
+        a little surprise. ❤️
+    </p>
+
+</div>
+
+<a href="index.html" class="back">
+    ← Back to Home
+</a>
+
+<script>
+function openLetter() {
+    const letter = document.getElementById("letter");
+
+    if (letter.style.display === "block") {
+        letter.style.display = "none";
+    } else {
+        letter.style.display = "block";
+        letter.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+}
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.textContent = Math.random() > 0.5 ? "♡" : "🌸";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 15) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+}, 900);
+</script>
+
+</body>
+</html>
